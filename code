@@ -1,0 +1,19 @@
+function rot13(str) {
+  let regularAlph = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+  let rot13 = ["N","O","P","Q","R","S","T","U","V", "W","X","Y","Z","A","B","C","D","E","F","G","H","I","J","K","L","M"];
+  let index;
+  let newArr = []
+  let regex = /[a-zA-Z]/
+
+  for (let i = 0; i< str.length; i++){
+    if (regularAlph.includes(str[i])){
+     index = rot13.indexOf(str[i])
+     newArr.push(regularAlph[index]) 
+    }else{
+   newArr.push(str[i])
+  }
+ }
+  return newArr.join("");
+}
+
+rot13("SERR PBQR PNZC");
